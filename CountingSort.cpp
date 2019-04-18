@@ -1,4 +1,3 @@
-#include<stdlib.h>
 #include<iostream>
 using namespace std;
 void counting_sort(int A[], int size){
@@ -25,7 +24,7 @@ void counting_sort(int A[], int size){
 int main(){
     int size;
     
-    scanf("%d", &size);
+    cin>>size;
     int arr[size];
     
     for(int i=0; i<size; i++)

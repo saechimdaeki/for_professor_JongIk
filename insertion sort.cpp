@@ -1,4 +1,3 @@
-#include<stdlib.h>
 #include<iostream>
 using namespace std;
 int count=0;
@@ -28,17 +27,14 @@ void Insert_Sort(int arr[], int growth, int size){
  
 int main(){
     int size;
-    int element;
-     
-    int* arr;
+    
          
     //input
     cin>>size;
-    arr = (int*) malloc(size*sizeof(int));
+    int arr[size];
      
     for(int i=0; i<size; i++){
-        cin>>element;
-        arr[i] = element;
+        cin>>arr[i];
     }
      
     //sort
@@ -51,7 +47,7 @@ int main(){
      
      
      
-    free(arr);
+    
      
     return 0;
 }

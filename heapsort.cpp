@@ -59,5 +59,8 @@ int main()
    heapSort(A, size-1);
  
    cout << count << endl;
+   
+   for(int i=0; i<size; i++)
+   cout<<A[i]<<" ";
    return 0;
 }
