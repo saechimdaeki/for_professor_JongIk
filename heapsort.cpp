@@ -25,7 +25,7 @@ void heapify(int A[], int start, int end)
       heapify(A, bigger, end);
    }
 }
- 
+ //maxheap
 void buildHeap(int A[], int end)
 {
    for(int i=end/2; i>=0; i--)
@@ -57,7 +57,7 @@ int main()
    }
   
    heapSort(A, size-1);
- 
+ 	
    cout << count << endl;
    
    for(int i=0; i<size; i++)
