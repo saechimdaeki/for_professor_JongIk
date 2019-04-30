@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-int max = 0;
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+int max2;//c++ÀÇ max¿Í °ãÃÄ¼­. 
 
 typedef struct _node* nodeptr;
 typedef struct _node{
@@ -30,8 +30,6 @@ nodeptr find_tail(nodeptr N){
        
        return preptr;
 }
-
-//Link rightst with leftset
 void Union(nodeptr L, nodeptr R){
      nodeptr headL = find_Set(L);
      nodeptr headR = find_Set(R);
@@ -43,7 +41,6 @@ void Union(nodeptr L, nodeptr R){
      tail->next = headR;
      headR->headp = headL;
 }
-
 int count_friends(nodeptr N, int sum){
      if(N->next) return count_friends(N->next, sum+1);
      return sum;
@@ -55,32 +52,33 @@ void result(node N[], int size){
           //if N[i] is root
           if((N[i].headp != NULL) && find_Set(&N[i]) == &N[i]){
                friends = count_friends(&N[i], 1);
-               if(max < friends) max = friends;
+               if(max2 <= friends) max2 = friends;
           }
      }
 }
              
 
 int main(){
-    int n;
-    int m;
-    scanf("%d %d",&n,&m);
+    int n,m;
+    cin>>n>>m;
     node N[n];
-    for(int i = 0; i<n; i++) N[i].headp = NULL;
+    for(int i = 0; i<n; i++) 
+	N[i].headp = NULL;
     
     int tempL; int tempR;
     for(int i = 0; i<m; i++){
-            scanf("%d %d", &tempL, &tempR);
+            cin>>tempL>>tempR;
             tempL--; tempR--;
             
-            if(!N[tempL].headp) make_Set(&N[tempL]);
-            if(!N[tempR].headp) make_Set(&N[tempR]);
+            if(!N[tempL].headp) 
+			make_Set(&N[tempL]);
+            if(!N[tempR].headp) 
+			make_Set(&N[tempR]);
             
             Union(&N[tempL], &N[tempR]);
     }
-    
     result(N, n);
-    printf("%d", max);
+	cout<<max2;
     
     return 0;
 }
