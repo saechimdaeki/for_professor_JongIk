@@ -1,8 +1,8 @@
-#include<stdio.h>
+#include<iostream>
 #include<stdlib.h>
-#include<windows.h>
-
-int max = 0;
+#include<algorithm>
+using namespace std;
+int max;
 
 typedef struct _node* nodeptr;
 typedef struct _node{
@@ -65,15 +65,14 @@ void result(node N[], int size){
 int main(){
     int n;
     int m;
-    
-    scanf("%d %d", &n, &m);
+	cin>>n>>m;
     
     node N[n];
     for(int i = 0; i<n; i++) N[i].headp = NULL;
     
     int tempL; int tempR;
     for(int i = 0; i<m; i++){
-            scanf("%d %d", &tempL, &tempR);
+            cin>>tempL>>tempR;
             tempL--; tempR--;
             
             if(!N[tempL].headp) make_Set(&N[tempL]);
@@ -83,7 +82,7 @@ int main(){
     }
     
     result(N, n);
-    printf("%d", max);
+    cout<<max;
     
     return 0;
 }
