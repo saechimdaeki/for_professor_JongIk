@@ -98,7 +98,7 @@ template <typename T>
 void cBinarySearchTree<T>::treeDelete(T x){
     cNode<T>* r = root;
     cNode<T>* p = 0;
-  
+  //r의 부모찾아 p에저장 
     while(r!=0){
         if(r->key == x) break;
         p = r;
