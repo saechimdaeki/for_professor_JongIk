@@ -43,8 +43,7 @@ int main (){
    int start;
    cin >> start;
    
-   for(int i=0; i<n; i++) 
-   sort(graph[i].begin(), graph[i].end());
+   
 
    bfs(start-1, graph, check);
 
