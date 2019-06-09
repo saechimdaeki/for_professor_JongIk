@@ -523,15 +523,7 @@ void aStarSearch(int grid[][COL], Pair src, Pair dest)
                 gNew = cellDetails[i][j].g + 1.414; 
                 hNew = calculateHValue(i+1, j+1, dest); 
                 fNew = gNew + hNew; 
-  
-                // If it isn¡¯t on the open list, add it to 
-                // the open list. Make the current square 
-                // the parent of this square. Record the 
-                // f, g, and h costs of the square cell 
-                //                OR 
-                // If it is on the open list already, check 
-                // to see if this path to that square is better, 
-                // using 'f' cost as the measure. 
+   
                 if (cellDetails[i+1][j+1].f == FLT_MAX || 
                         cellDetails[i+1][j+1].f > fNew) 
                 { 
